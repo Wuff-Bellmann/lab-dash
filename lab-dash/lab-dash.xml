@@ -4,6 +4,7 @@
   <Repository>ghcr.io/anthonygress/lab-dash:latest</Repository>
   <Registry>https://ghcr.io</Registry>
   <Network>bridge</Network>
+  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/196029-lab-dash-homelabserver-dashboard-docker-install/</Support>
@@ -14,6 +15,9 @@
   <WebUI>http://[IP]:[PORT:2022]/</WebUI>
   <TemplateURL>https://github.com/Wuff-Bellmann/lab-dash/blob/main/lab-dash/lab-dash.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/AnthonyGress/lab-dash/refs/heads/main/frontend/public/icon192.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
   <DonateText>Support the developer</DonateText>
   <DonateLink>https://buymeacoffee.com/anthonygress</DonateLink>
   <Requires>optional: use privileged: true and network_mode: host for monitoring network usage stats.</Requires>
