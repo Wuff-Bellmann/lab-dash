@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>lab-dash</Name>
+  <Repository>ghcr.io/anthonygress/lab-dash:latest</Repository>
+  <Registry>https://ghcr.io</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates/</Support>
+  <Project>https://github.com/AnthonyGress/lab-dash</Project>
+  <ReadMe/>
+  <Overview>This is an open-source user interface designed to be your internally hosted homepage for your homelab/server.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:2022]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/AnthonyGress/lab-dash/refs/heads/main/frontend/public/icon192.png</Icon>
+  <<DonateText>Support the developer</DonateText>
+  <DonateLink>https://buymeacoffee.com/anthonygress</DonateLink>
+  <Requires>Create the folder "lab-dash" under appdate. Within "lab-dash" create two seperate folders: "config" and "uploads".&#13;
+&#13;
+optional: use privileged: true and network_mode: host for monitoring network usage stats.</Requires>
+  <Config Name="SECRET" Target="SECRET" Default="" Mode="" Description="You can run `openssl rand -base64 32` to generate a key" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lab-dash/config</Config>
+  <Config Name="/app/public/uploads" Target="/app/public/uploads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/lab-dash/uploads</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="/sys" Target="/sys" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/sys</Config>
+  <Config Name="Port" Target="2022" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">2022</Config>
+  <TailscaleStateDir/>
+</Container>
