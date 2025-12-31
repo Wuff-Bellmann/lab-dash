@@ -6,25 +6,23 @@
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/133764-support-grtgbln-docker-templates/</Support>
+  <Support>https://forums.unraid.net/topic/196029-lab-dash-homelabserver-dashboard-docker-install/</Support>
   <Project>https://github.com/AnthonyGress/lab-dash</Project>
-  <ReadMe/>
+  <ReadMe>https://github.com/AnthonyGress/lab-dash#installation</ReadMe>
   <Overview>This is an open-source user interface designed to be your internally hosted homepage for your homelab/server.</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:2022]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://github.com/Wuff-Bellmann/lab-dash/blob/main/lab-dash/lab-dash.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/AnthonyGress/lab-dash/refs/heads/main/frontend/public/icon192.png</Icon>
-  <<DonateText>Support the developer</DonateText>
+  <DonateText>Support the developer</DonateText>
   <DonateLink>https://buymeacoffee.com/anthonygress</DonateLink>
-  <Requires>Create the folder "lab-dash" under appdate. Within "lab-dash" create two seperate folders: "config" and "uploads".&#13;
-&#13;
-optional: use privileged: true and network_mode: host for monitoring network usage stats.</Requires>
+  <Requires>optional: use privileged: true and network_mode: host for monitoring network usage stats.</Requires>
   <Config Name="SECRET" Target="SECRET" Default="" Mode="" Description="You can run `openssl rand -base64 32` to generate a key" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lab-dash/config</Config>
-  <Config Name="/app/public/uploads" Target="/app/public/uploads" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/lab-dash/uploads</Config>
-  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="/sys" Target="/sys" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/sys</Config>
-  <Config Name="Port" Target="2022" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">2022</Config>
+  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="Lab-Dash config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/lab-dash/config</Config>
+  <Config Name="/app/public/uploads" Target="/app/public/uploads" Default="" Mode="rw" Description="Uploads folder" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/lab-dash/uploads</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID (Unraid: 99 = nobody)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID (Unraid: 100 = users)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="/sys" Target="/sys" Default="" Mode="ro" Description="Sys filesystem (for monitoring)" Type="Path" Display="advanced" Required="false" Mask="false">/sys</Config>
+  <Config Name="Port" Target="2022" Default="2022" Mode="tcp" Description="Application Port" Type="Port" Display="always" Required="false" Mask="false"/>
   <TailscaleStateDir/>
 </Container>
